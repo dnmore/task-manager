@@ -1,0 +1,35 @@
+import type { Config } from "tailwindcss";
+
+export default {
+  content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: [
+          '"Noto Sans"',
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ],
+        sans_grotesque:[
+          '"Bricolage Grotesque"',
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ]
+      },
+      boxShadow:{
+        primary: ".5rem .5rem 0 0 hsl(237, 18%, 23%)",
+      }
+    },
+  },
+  plugins: [],
+} satisfies Config;

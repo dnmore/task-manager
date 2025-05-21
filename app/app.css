@@ -1,10 +1,6 @@
-@import "tailwindcss";
-
-@theme {
-  --font-sans: "Darker Grotesque", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --shadow-primary: 6px 6px 0 0 #282925;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html,
 body {
