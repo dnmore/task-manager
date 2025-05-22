@@ -1,13 +1,26 @@
+import { useState } from "react";
 import type { Route } from "./+types/home";
 import { Welcome } from "../welcome/welcome";
+import { Navbar } from "~/components/navbar";
+import { RulesModal } from "~/components/rulesModal";
 
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { name: "description", content: "Welcome to Taskie!" },
   ];
 }
 
 export default function Home() {
-  return <Welcome />;
+  const [isRulesModalOpen, setIsRulesModalOpen] = useState(false);
+
+  const openRulesModal = () => setIsRulesModalOpen(true);
+  const closeRulesModal = () => setIsRulesModalOpen(false);
+  return (
+    <div>
+      <Navbar onOpenRules={openRulesModal} />
+      <RulesModal isOpen={isRulesModalOpen} onClose={closeRulesModal} />
+      <Welcome />
+    </div>
+  );
 }
