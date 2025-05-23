@@ -1,4 +1,12 @@
-export function PriorityFilter() {
+
+
+type PriorityFilterProps = {
+  value: string,
+  onSelect: (e:React.ChangeEvent<HTMLSelectElement>) => void
+}
+
+
+export function PriorityFilter({value, onSelect} : PriorityFilterProps) {
   return (
     <div className="mt-6 grid px-6">
       <label
@@ -10,8 +18,9 @@ export function PriorityFilter() {
 
       <select
         id="priority-select"
-        defaultValue="all"
-        className="w-full max-w-80 border border-black  shadow-primary py-1.5 pl-1 pr-20 mb-2 uppercase outline-none cursor-pointer  placeholder:text-gray-400  sm:text-sm sm:leading-6"
+        value={value}
+        onChange={onSelect}
+        className="w-full max-w-80 border border-slate-800  shadow-primary py-1.5 pl-1 pr-20 mb-2 uppercase cursor-pointer  placeholder:text-gray-400  focus-within:outline-2 focus-within:outline-indigo-600"
       >
         <option value="all">All</option>
         <option value="🌿 low"> 🌿 Low Priority</option>
