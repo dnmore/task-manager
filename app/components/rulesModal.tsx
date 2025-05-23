@@ -1,11 +1,11 @@
 import { motion } from "motion/react";
 
-type ModalProps = {
+type RulesModalProps = {
   isOpen: boolean;
   onClose: () => void;
 };
 
-export function RulesModal({ isOpen, onClose }: ModalProps) {
+export function RulesModal({ isOpen, onClose }: RulesModalProps) {
   if (!isOpen) return null;
 
   return (
