@@ -6,7 +6,7 @@ import { RulesModal } from "~/components/rulesModal";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
+    { title: "Taskie | Task Manager with Gamification" },
     { name: "description", content: "Welcome to Taskie!" },
   ];
 }
