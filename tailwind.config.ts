@@ -15,7 +15,7 @@ export default {
           '"Segoe UI Symbol"',
           '"Noto Color Emoji"',
         ],
-        sans_grotesque:[
+        sans_grotesque: [
           '"Bricolage Grotesque"',
           "ui-sans-serif",
           "system-ui",
@@ -24,11 +24,12 @@ export default {
           '"Segoe UI Emoji"',
           '"Segoe UI Symbol"',
           '"Noto Color Emoji"',
-        ]
+        ],
       },
-      boxShadow:{
+      boxShadow: {
         primary: ".5rem .5rem 0 0 hsl(237, 18%, 23%)",
-      }
+        secondary: ".2rem .2rem  0 0 hsl(237, 18%, 23%)",
+      },
     },
   },
   plugins: [],

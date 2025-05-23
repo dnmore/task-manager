@@ -13,7 +13,6 @@ const variants = {
     opacity: 1,
     scale: [1, 2, 2, 1, 1],
     rotate: [0, 0, 270, 270, 0],
-    borderRadius: ["20%", "20%", "50%", "50%", "20%"],
   },
   hidden: { opacity: 0 },
 };
@@ -38,7 +37,7 @@ export function TaskItem({ task }: TaskItemProps) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.5 }}
-      className="max-w-xs flex flex-col  gap-4 my-2 py-6 px-4 border-2 border-black shadow-primary"
+      className="flex flex-col  gap-4 my-2 py-6 px-4 border-2 border-slate-800 shadow-primary"
     >
       <div className="text-sm mb-8">
         <p className="text-base font-semibold uppercase">Task: {task.text}</p>
@@ -52,7 +51,7 @@ export function TaskItem({ task }: TaskItemProps) {
             onClick={() => handleEditTask(task)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 1.1 }}
-            className="w-28 h-8 uppercase font-medium tracking-wider bg-orange-600 border-2 border-black "
+            className="w-28 h-8 uppercase font-medium tracking-wider bg-yellow-300 border-2 border-slate-800 shadow-secondary"
           >
             Edit
           </motion.button>
@@ -65,7 +64,7 @@ export function TaskItem({ task }: TaskItemProps) {
             onClick={() => deleteTask(task.id)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 1.1 }}
-            className="w-28 h-8  uppercase font-medium tracking-wider bg-red-600  border-2 border-black "
+            className="w-28 h-8  uppercase font-medium tracking-wider bg-pink-500  border-2 border-slate-800 shadow-secondary"
           >
             Delete
           </motion.button>
@@ -74,7 +73,7 @@ export function TaskItem({ task }: TaskItemProps) {
               onClick={() => toggleTask(task.id)}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 1.1 }}
-              className="w-28 h-8  uppercase font-medium tracking-wider bg-gray-400 border-2 border-black "
+              className="w-28 h-8  uppercase font-medium tracking-wider bg-gray-200 border-2 border-slate-800 shadow-secondary"
             >
               To Do
             </motion.button>
@@ -83,7 +82,7 @@ export function TaskItem({ task }: TaskItemProps) {
               onClick={() => toggleTask(task.id)}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 1.1 }}
-              className="w-28 h-8  uppercase font-medium tracking-wider bg-green-600 border-2 border-black "
+              className="w-28 h-8  uppercase font-medium tracking-wider bg-lime-400 border-2 border-slate-800 shadow-secondary"
             >
               Done
             </motion.button>
@@ -91,7 +90,7 @@ export function TaskItem({ task }: TaskItemProps) {
         </div>
 
         <motion.div
-          className="text-2xl h-12 w-12 grid place-content-center  border-2 border-black bg-purple-600"
+          className="text-2xl h-12 w-12 grid place-content-center  border-2 border-slate-800 bg-pink-300 shadow-secondary"
           animate={task.done ? "visible" : "hidden"}
           variants={variants}
         >
