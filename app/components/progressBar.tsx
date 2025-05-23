@@ -5,7 +5,7 @@ type ProgressBarProps = {
 
 export function ProgressBar({points} : ProgressBarProps) {
 
-  const percentage = Math.min((points / 100) * 100, 100);
+  const percentage = Math.min(((points % 100) / 100) * 100, 100)
   const level = 
   points < 100 ?
   "🐴 Taskie Novice"
@@ -22,10 +22,10 @@ export function ProgressBar({points} : ProgressBarProps) {
         aria-valuemin={0}
         aria-valuemax={100}
         aria-valuetext={`${points} out of ${100} points`}
-        className="max-w-sm flex-1 bg-gray-400 rounded-full h-6 shadow-primary"
+        className="max-w-sm flex-1 bg-gray-400 rounded-full h-6 shadow-secondary"
       >
         <div
-          className="bg-green-700 h-6 rounded-full shadow-primary"
+          className="bg-green-700 h-6 rounded-full shadow-secondary"
           style={{ width: `${percentage}%` }}
         ></div>
       </div>
