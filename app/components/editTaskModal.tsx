@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useTaskStore } from "~/store/useTaskStore";
 import { motion } from "motion/react";
+import { useTaskForm } from "~/hooks/useTaskForm";
 
 type EditModalProps = {
   isOpen: boolean;
@@ -11,7 +12,7 @@ type EditModalProps = {
 const variants = {
   error: {
     borderColor: "#E94A8A",
-    x: [-10, 0, 10, 0],
+    x: [-10, 0],
   },
   valid: { borderColor: "#282925" },
 };
@@ -24,13 +25,24 @@ export function EditTaskModal({
   const task = useTaskStore((state) =>
     state.tasks.find((t) => t.id === taskIdToUpdate)
   );
-
-  const [taskText, setTaskText] = useState("");
-  const [priority, setPriority] = useState("🌿 low");
-  const [dueDate, setDueDate] = useState("");
-  const [done, setDone] = useState(false);
-  const [errorText, setErrorText] = useState(false);
-  const [errorDate, setErrorDate] = useState(false);
+const {
+    taskText,
+    setTaskText,
+    priority,
+    setPriority,
+    dueDate,
+    setDueDate,
+    done,
+    setDone,
+    errorText,
+    errorDate,
+    resetForm,
+    validate,
+    
+  } = useTaskForm();
+  
+  
+  
 
   useEffect(() => {
     if (task) {
@@ -45,13 +57,7 @@ export function EditTaskModal({
 
   const handleUpdateTask = () => {
     if (taskIdToUpdate) {
-      if (!taskText) {
-        setErrorText(true);
-        return;
-      } else if (!dueDate) {
-        setErrorDate(true);
-        return;
-      }
+      if (!validate()) return;
       const updatedTask = {
         id: taskIdToUpdate,
         text: taskText,
@@ -60,6 +66,7 @@ export function EditTaskModal({
         done: done,
       };
       updateTask(updatedTask);
+      resetForm();
       onClose();
     }
   };
@@ -100,7 +107,7 @@ export function EditTaskModal({
           value={taskText}
           onChange={(e) => setTaskText(e.target.value)}
           placeholder="task description"
-          className="w-72 md:w-80 border py-1.5 pl-1 my-2 placeholder:text-gray-400 "
+          className="w-72 md:w-80 border border-slate-800 py-1.5 pl-1 my-2 placeholder:text-gray-400 focus-within:outline-2 focus-within:outline-indigo-600"
           animate={errorText ? "error" : "valid"}
           variants={variants}
           transition={{ type: "spring", bounce: 0.75, duration: 0.8 }}
@@ -109,7 +116,7 @@ export function EditTaskModal({
           value={priority}
           aria-label="priority"
           onChange={(e) => setPriority(e.target.value)}
-          className="w-72 md:w-80  border py-1.5 pl-1 pr-20 my-2  uppercase"
+          className="w-72 md:w-80  border border-slate-800 py-1.5 pl-1 pr-20 my-2  uppercase focus-within:outline-2 focus-within:outline-indigo-600"
         >
           <option value="🌿 low">🌿 Low Priority</option>
           <option value="🕒 medium">🕒 Medium Priority</option>
@@ -119,7 +126,7 @@ export function EditTaskModal({
           type="date"
           value={dueDate}
           onChange={(e) => setDueDate(e.target.value)}
-          className="w-72 md:w-80  border py-1.5 pl-1 pr-20 my-2  placeholder:text-gray-400"
+          className="w-72 md:w-80  border border-slate-800 py-1.5 pl-1 pr-20 my-2  placeholder:text-gray-400 focus-within:outline-2 focus-within:outline-indigo-600"
           animate={errorDate ? "error" : "valid"}
           variants={variants}
           transition={{ type: "spring", bounce: 0.75, duration: 0.8 }}
@@ -137,7 +144,7 @@ export function EditTaskModal({
             transition: { duration: 1 },
           }}
           whileInView={{ opacity: 1 }}
-          className="w-72 md:w-80 py-2 shadow-primary mt-3 uppercase font-medium tracking-wider border border-black  bg-blue-700 text-white"
+          className="w-72 md:w-80 py-2 shadow-primary mt-3 uppercase font-medium tracking-wider border border-slate-800  bg-indigo-300"
         >
           Save
         </motion.button>

@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { useTaskStore } from "~/store/useTaskStore";
 import { motion } from "motion/react";
 import { v4 as uuidv4 } from "uuid";
+import { useTaskStore } from "~/store/useTaskStore";
+import { useTaskForm } from "~/hooks/useTaskForm";
 type AddModalProps = {
   isOpen: boolean;
   onClose: () => void;
@@ -10,35 +10,31 @@ type AddModalProps = {
 const variants = {
   error: {
     borderColor: "#E94A8A",
-    x: [-10, 0, 10, 0],
+    x: [-10, 0],
   },
   valid: { borderColor: "#282925" },
 };
 
 export function AddTaskModal({ isOpen, onClose }: AddModalProps) {
   const addTask = useTaskStore((state) => state.addTask);
-  const [taskText, setTaskText] = useState("");
-  const [priority, setPriority] = useState("🌿 low");
-  const [dueDate, setDueDate] = useState("");
-  const [errorText, setErrorText] = useState(false);
-  const [errorDate, setErrorDate] = useState(false);
+  const {
+    taskText,
+    setTaskText,
+    priority,
+    setPriority,
+    dueDate,
+    setDueDate,
+    errorText,
+    errorDate,
+    resetForm,
+    validate,
+  } = useTaskForm();
 
   if (!isOpen) return null;
 
-  const resetForm = () => {
-    setTaskText(""), setPriority("🌿 low"), setDueDate("");
-    setErrorText(false);
-    setErrorDate(false);
-  };
-
   const handleCreateTask = () => {
-    if (!taskText) {
-      setErrorText(true);
-      return;
-    } else if (!dueDate) {
-      setErrorDate(true);
-      return;
-    }
+    if (!validate()) return;
+
     const newTask = {
       id: uuidv4(),
       text: taskText,
@@ -47,6 +43,11 @@ export function AddTaskModal({ isOpen, onClose }: AddModalProps) {
       done: false,
     };
     addTask(newTask);
+    resetForm();
+    onClose();
+  };
+
+  const handleClose = () => {
     resetForm();
     onClose();
   };
@@ -68,7 +69,7 @@ export function AddTaskModal({ isOpen, onClose }: AddModalProps) {
         className=" p-6 w-full max-w-sm relative bg-white"
       >
         <motion.button
-          onClick={onClose}
+          onClick={handleClose}
           whileHover={{ scale: 1.1 }}
           className="absolute top-4 right-4"
           aria-label="Close task modal"
@@ -87,7 +88,7 @@ export function AddTaskModal({ isOpen, onClose }: AddModalProps) {
           value={taskText}
           onChange={(e) => setTaskText(e.target.value)}
           placeholder="task description"
-          className="w-72 md:w-80 border py-1.5 pl-1 my-2 placeholder:text-gray-400 "
+          className="w-72 md:w-80 border border-slate-800 py-1.5 pl-1 my-2 placeholder:text-gray-400 focus-within:outline-2 focus-within:outline-indigo-600"
           animate={errorText ? "error" : "valid"}
           variants={variants}
           transition={{ type: "spring", bounce: 0.75, duration: 0.8 }}
@@ -96,7 +97,7 @@ export function AddTaskModal({ isOpen, onClose }: AddModalProps) {
           value={priority}
           aria-label="priority"
           onChange={(e) => setPriority(e.target.value)}
-          className="w-72 md:w-80  border py-1.5 pl-1 pr-20 my-2  uppercase"
+          className="w-72 md:w-80  border border-slate-800 py-1.5 pl-1 pr-20 my-2  uppercase focus-within:outline-2 focus-within:outline-indigo-600"
         >
           <option value="🌿 low">🌿 Low Priority</option>
           <option value="🕒 medium">🕒 Medium Priority</option>
@@ -106,7 +107,7 @@ export function AddTaskModal({ isOpen, onClose }: AddModalProps) {
           type="date"
           value={dueDate}
           onChange={(e) => setDueDate(e.target.value)}
-          className="w-72 md:w-80  border py-1.5 pl-1 pr-20 my-2  placeholder:text-gray-400"
+          className="w-72 md:w-80  border border-slate-800 py-1.5 pl-1 pr-20 my-2  placeholder:text-gray-400 focus-within:outline-2 focus-within:outline-indigo-600"
           animate={errorDate ? "error" : "valid"}
           variants={variants}
           transition={{ type: "spring", bounce: 0.75, duration: 0.8 }}
@@ -124,7 +125,7 @@ export function AddTaskModal({ isOpen, onClose }: AddModalProps) {
             transition: { duration: 1 },
           }}
           whileInView={{ opacity: 1 }}
-          className="w-72 md:w-80 py-2 shadow-primary mt-3 uppercase font-medium tracking-wider border border-black  bg-blue-700 text-white"
+          className="w-72 md:w-80 py-2 shadow-primary mt-3 uppercase font-medium tracking-wider border border-slate-800  bg-indigo-300"
         >
           Save
         </motion.button>
