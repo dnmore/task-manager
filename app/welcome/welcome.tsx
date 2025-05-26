@@ -31,6 +31,7 @@ export function Welcome() {
           onClick={openTaskModal}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 1.05 }}
+          aria-label="Create new task"
           className="w-full font-sans_grotesque max-w-80 py-4 px-8  uppercase tracking-wider bg-indigo-300  border-2 border-slate-800  text-3xl font-extrabold shadow-primary"
         >
           Create Task
