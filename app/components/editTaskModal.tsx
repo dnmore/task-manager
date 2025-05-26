@@ -25,7 +25,7 @@ export function EditTaskModal({
   const task = useTaskStore((state) =>
     state.tasks.find((t) => t.id === taskIdToUpdate)
   );
-const {
+  const {
     taskText,
     setTaskText,
     priority,
@@ -38,11 +38,7 @@ const {
     errorDate,
     resetForm,
     validate,
-    
   } = useTaskForm();
-  
-  
-  
 
   useEffect(() => {
     if (task) {
@@ -76,8 +72,8 @@ const {
       <motion.div
         role="dialog"
         aria-modal="true"
-        aria-labelledby="rules-title"
-        aria-describedby="rules-description"
+        aria-labelledby="modalTitle"
+        aria-describedby="modalDesc"
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -97,13 +93,19 @@ const {
         </motion.button>
 
         <h1
-          id="rules-title"
+          id="modalTitle"
           className="text-xl font-bold mb-2 font-sans_grotesque"
         >
           Update Task
         </h1>
+        <p id="modalDesc">Update task details below</p>
+        <label htmlFor="description" className="sr-only">
+          Edit task description
+        </label>
         <motion.input
           type="text"
+          id="description"
+          name="description"
           value={taskText}
           onChange={(e) => setTaskText(e.target.value)}
           placeholder="task description"
@@ -112,9 +114,13 @@ const {
           variants={variants}
           transition={{ type: "spring", bounce: 0.75, duration: 0.8 }}
         />
+        <label htmlFor="priority-select" className="sr-only">
+          Edit priority
+        </label>
         <select
           value={priority}
-          aria-label="priority"
+          id="priority-select"
+          name="priority-select"
           onChange={(e) => setPriority(e.target.value)}
           className="w-72 md:w-80  border border-slate-800 py-1.5 pl-1 pr-20 my-2  uppercase focus-within:outline-2 focus-within:outline-indigo-600"
         >
@@ -122,8 +128,13 @@ const {
           <option value="🕒 medium">🕒 Medium Priority</option>
           <option value="🔥 high">🔥 High Priority</option>
         </select>
+        <label htmlFor="date-select" className="sr-only">
+          Edit due date
+        </label>
         <motion.input
           type="date"
+          id="date-select"
+          name="date-select"
           value={dueDate}
           onChange={(e) => setDueDate(e.target.value)}
           className="w-72 md:w-80  border border-slate-800 py-1.5 pl-1 pr-20 my-2  placeholder:text-gray-400 focus-within:outline-2 focus-within:outline-indigo-600"
@@ -134,19 +145,16 @@ const {
 
         <motion.button
           onClick={handleUpdateTask}
-          initial={{ opacity: 0.6 }}
+          aria-label="Update task"
           whileHover={{
             scale: 1.05,
-            transition: { duration: 1 },
           }}
           whileTap={{
             scale: 1.05,
-            transition: { duration: 1 },
           }}
-          whileInView={{ opacity: 1 }}
           className="w-72 md:w-80 py-2 shadow-primary mt-3 uppercase font-medium tracking-wider border border-slate-800  bg-indigo-300"
         >
-          Save
+          Update
         </motion.button>
       </motion.div>
     </div>
