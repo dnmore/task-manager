@@ -3,6 +3,7 @@ import { persist } from "zustand/middleware";
 import { v4 as uuidv4 } from "uuid";
 import type { Task } from "~/types/definition";
 
+
 interface TaskStore {
     tasks: Task[]
     points: number
@@ -48,8 +49,8 @@ export const useTaskStore = create<TaskStore>()(
         let updatedPoints = points
 
         if (toggledTask) {
-          const value = toggledTask.priority === "🌿 low" ? 10 :
-                        toggledTask.priority === "🕒 medium" ? 20 : 30
+          const value = toggledTask.priority === "low" ? 10 :
+                        toggledTask.priority === "medium" ? 20 : 30
           updatedPoints += toggledTask.done ? -value : value
         }
 

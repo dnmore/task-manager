@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export function useTaskForm() {
   const [taskText, setTaskText] = useState("");
-  const [priority, setPriority] = useState("🌿 low");
+  const [priority, setPriority] = useState("low");
   const [dueDate, setDueDate] = useState("");
   const [errorText, setErrorText] = useState(false);
   const [errorDate, setErrorDate] = useState(false);
@@ -10,7 +10,7 @@ export function useTaskForm() {
 
   const resetForm = () => {
     setTaskText(""),
-      setPriority("🌿 low"),
+      setPriority("low"),
       setDueDate(""),
       setErrorText(false),
       setErrorDate(false);

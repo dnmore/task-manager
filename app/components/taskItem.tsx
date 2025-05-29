@@ -3,6 +3,7 @@ import { useTaskStore } from "~/store/useTaskStore";
 import { motion } from "motion/react";
 import type { Task } from "~/types/definition";
 import { EditTaskModal } from "./editTaskModal";
+import { Gem, Clock } from "lucide-react";
 
 type TaskItemProps = {
   task: Task;
@@ -37,64 +38,61 @@ export function TaskItem({ task }: TaskItemProps) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.5 }}
-      className="flex flex-col  gap-4 my-2 py-6 px-4 border-2 border-slate-800 shadow-primary"
+      className="flex flex-col  gap-4 my-6 pb-6 px-4 bg-customGray border-2 border-slate-800 shadow-secondary rounded-lg"
     >
-      <div className="text-sm mb-8">
-        <p className="text-base font-semibold uppercase">Task: {task.text}</p>
-        <p>Priority: {task.priority}</p>
-        <p>Due Date: {task.dueDate}</p>
+      <span className="max-w-20 text-xs rounded-sm uppercase text-center border-2 border-slate-800 -mt-4 relative bg-slate-800 text-white py-2">
+        {task.priority}
+      </span>
+      <div className="mb-8">
+        <p className="text-xl font-semibold font-sans_grotesque uppercase">
+          {task.text}
+        </p>
+
+        <p className="flex items-center gap-2 mt-2 text-base"><Clock size={24} className="text-slate-800" /> {task.dueDate}</p>
       </div>
 
       <div className="grid grid-cols-2 gap-4 place-items-end ">
-        <div className="flex flex-wrap gap-2">
-          <motion.button
+        <div className="flex flex-wrap gap-4">
+          <button
             onClick={() => handleEditTask(task)}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 1.1 }}
-            className="w-28 h-8 uppercase font-medium tracking-wider bg-yellow-300 border-2 border-slate-800 shadow-secondary"
+            className="w-28 h-8 uppercase font-medium tracking-wider bg-customYellow border-2 border-slate-800 shadow-secondary skew-y-3 hover:scale-[1.02]"
           >
             Edit
-          </motion.button>
+          </button>
           <EditTaskModal
             taskIdToUpdate={taskIdToUpdate}
             isOpen={isUpdateModalOpen}
             onClose={closeUpdateModal}
           />
-          <motion.button
+          <button
             onClick={() => deleteTask(task.id)}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 1.1 }}
-            className="w-28 h-8  uppercase font-medium tracking-wider bg-pink-500  border-2 border-slate-800 shadow-secondary"
+            className="w-28 h-8  uppercase font-medium tracking-wider bg-pink-400  border-2 border-slate-800 shadow-secondary hover:scale-[1.02]"
           >
             Delete
-          </motion.button>
+          </button>
           {!task.done ? (
-            <motion.button
+            <button
               onClick={() => toggleTask(task.id)}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 1.1 }}
-              className="w-28 h-8  uppercase font-medium tracking-wider bg-gray-200 border-2 border-slate-800 shadow-secondary"
+              className="w-28 h-8  uppercase font-medium tracking-wider bg-customGray border-2 border-slate-800 shadow-secondary skew-y-3 hover:scale-[1.02]"
             >
               To Do
-            </motion.button>
+            </button>
           ) : (
-            <motion.button
+            <button
               onClick={() => toggleTask(task.id)}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 1.1 }}
-              className="w-28 h-8  uppercase font-medium tracking-wider bg-lime-400 border-2 border-slate-800 shadow-secondary"
+              className="w-28 h-8  uppercase font-medium tracking-wider bg-customGreen border-2 border-slate-800 shadow-secondary skew-y-3 hover:scale-[1.02]"
             >
               Done
-            </motion.button>
+            </button>
           )}
         </div>
 
         <motion.div
-          className="text-2xl h-12 w-12 grid place-content-center  border-2 border-slate-800 bg-pink-300 shadow-secondary"
+          className="text-2xl h-12 w-12 grid place-content-center"
           animate={task.done ? "visible" : "hidden"}
           variants={variants}
         >
-          ✔️
+          <Gem size={48} className="text-slate-800" />
         </motion.div>
       </div>
     </motion.div>

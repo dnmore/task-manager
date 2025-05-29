@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useTaskStore } from "~/store/useTaskStore";
 import { motion } from "motion/react";
 import { useTaskForm } from "~/hooks/useTaskForm";
+import { X } from "lucide-react";
 
 type EditModalProps = {
   isOpen: boolean;
@@ -14,7 +15,7 @@ const variants = {
     borderColor: "#E94A8A",
     x: [-10, 0],
   },
-  valid: { borderColor: "#282925" },
+  valid: { borderColor: "#959692" },
 };
 export function EditTaskModal({
   isOpen,
@@ -81,81 +82,79 @@ export function EditTaskModal({
           delay: 0.5,
           ease: [0, 0.71, 0.2, 1.01],
         }}
-        className=" p-6 w-full max-w-sm relative bg-white"
+        className=" font-sans font-normal p-6 w-full max-w-sm mx-4 md:mx-auto relative bg-customGray rounded-xl flex flex-col items-center"
       >
-        <motion.button
+        <button
           onClick={onClose}
-          whileHover={{ scale: 1.1 }}
-          className="absolute top-4 right-4"
+          className="absolute top-4 right-4 hover:scale-[1.2]"
           aria-label="Close task modal"
         >
-          ❌
-        </motion.button>
+          <X size="20" />
+        </button>
 
         <h1
           id="modalTitle"
-          className="text-xl font-bold mb-2 font-sans_grotesque"
+          className="text-2xl font-sans_grotesque font-semibold"
         >
           Update Task
         </h1>
-        <p id="modalDesc">Update task details below</p>
-        <label htmlFor="description" className="sr-only">
-          Edit task description
-        </label>
-        <motion.input
-          type="text"
-          id="description"
-          name="description"
-          value={taskText}
-          onChange={(e) => setTaskText(e.target.value)}
-          placeholder="task description"
-          className="w-72 md:w-80 border border-slate-800 py-1.5 pl-1 my-2 placeholder:text-gray-400 focus-within:outline-2 focus-within:outline-indigo-600"
-          animate={errorText ? "error" : "valid"}
-          variants={variants}
-          transition={{ type: "spring", bounce: 0.75, duration: 0.8 }}
-        />
-        <label htmlFor="priority-select" className="sr-only">
-          Edit priority
-        </label>
-        <select
-          value={priority}
-          id="priority-select"
-          name="priority-select"
-          onChange={(e) => setPriority(e.target.value)}
-          className="w-72 md:w-80  border border-slate-800 py-1.5 pl-1 pr-20 my-2  uppercase focus-within:outline-2 focus-within:outline-indigo-600"
-        >
-          <option value="🌿 low">🌿 Low Priority</option>
-          <option value="🕒 medium">🕒 Medium Priority</option>
-          <option value="🔥 high">🔥 High Priority</option>
-        </select>
-        <label htmlFor="date-select" className="sr-only">
-          Edit due date
-        </label>
-        <motion.input
-          type="date"
-          id="date-select"
-          name="date-select"
-          value={dueDate}
-          onChange={(e) => setDueDate(e.target.value)}
-          className="w-72 md:w-80  border border-slate-800 py-1.5 pl-1 pr-20 my-2  placeholder:text-gray-400 focus-within:outline-2 focus-within:outline-indigo-600"
-          animate={errorDate ? "error" : "valid"}
-          variants={variants}
-          transition={{ type: "spring", bounce: 0.75, duration: 0.8 }}
-        />
+        <p id="modalDesc" className="text-sm mb-2">
+          Update task details below
+        </p>
+        <form>
+          <label htmlFor="description" className="uppercase text-xs">
+            task
+          </label>
+          <motion.input
+            type="text"
+            id="description"
+            name="description"
+            value={taskText}
+            onChange={(e) => setTaskText(e.target.value)}
+            placeholder="task description"
+            className="w-72 md:w-80 border text-sm py-1.5 pl-1 mt-2 mb-4 placeholder:text-gray-400 focus-within:outline-2 focus-within:outline-customPurple"
+            animate={errorText ? "error" : "valid"}
+            variants={variants}
+            transition={{ type: "spring", bounce: 0.75, duration: 0.8 }}
+          />
+          <label htmlFor="priority-select" className="uppercase text-xs">
+           priority
+          </label>
+          <select
+            value={priority}
+            id="priority-select"
+            name="priority-select"
+            onChange={(e) => setPriority(e.target.value)}
+            className="w-72 md:w-80 border border-[#959692] text-sm py-1.5 pl-1 pr-20 mt-2 mb-4  uppercase focus-within:outline-2 focus-within:outline-customPurple"
+          >
+            <option value="low">Low Priority</option>
+            <option value="medium">Medium Priority</option>
+            <option value="high">High Priority</option>
+          </select>
+          <label htmlFor="date-select" className="uppercase text-xs">
+            due date
+          </label>
+          <motion.input
+            type="date"
+            id="date-select"
+            name="date-select"
+            value={dueDate}
+            onChange={(e) => setDueDate(e.target.value)}
+            className="w-72 md:w-80  border text-sm  py-1.5 pl-1 pr-20 mt-2 mb-4  placeholder:text-gray-400 focus-within:outline-2 focus-within:outline-customPurple"
+            animate={errorDate ? "error" : "valid"}
+            variants={variants}
+            transition={{ type: "spring", bounce: 0.75, duration: 0.8 }}
+          />
+        </form>
 
-        <motion.button
+        <button
           onClick={handleUpdateTask}
           aria-label="Update task"
-          whileHover={{
-            scale: 1.05,
-          }}
-          whileTap={{
-            scale: 1.05,
-          }}
-          className="w-72 md:w-80 py-2 shadow-primary mt-3 uppercase font-medium tracking-wider border border-slate-800  bg-indigo-300"
+          type="button"
+          className="w-72 py-3 shadow-primary mt-3 uppercase text-sm font-medium tracking-wider border-2 border-slate-800  bg-customYellow skew-y-1 hover:scale-[1.02]"
         >
           Update
-        </motion.button>
+        </button>
       </motion.div>
     </div>
   );
