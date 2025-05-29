@@ -30,6 +30,12 @@ export default {
         primary: ".5rem .5rem 0 0 hsl(237, 18%, 23%)",
         secondary: ".2rem .2rem  0 0 hsl(237, 18%, 23%)",
       },
+      colors: {
+        customGreen: "#6FDCBF",
+        customGray: "#F6F4F6",
+        customPurple: "#AE8FDB",
+        customYellow: "#FEF8B4",
+      },
     },
   },
   plugins: [],
