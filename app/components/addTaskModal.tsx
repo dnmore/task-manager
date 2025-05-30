@@ -87,7 +87,7 @@ export function AddTaskModal({ isOpen, onClose }: AddModalProps) {
           Enter task details below
         </p>
         <form>
-          <label htmlFor="description" className="uppercase text-xs">Task</label>
+          <label htmlFor="description" className="uppercase text-xs block">Task</label>
           <motion.input
             type="text"
             id="description"
@@ -100,7 +100,7 @@ export function AddTaskModal({ isOpen, onClose }: AddModalProps) {
             variants={variants}
             transition={{ type: "spring", bounce: 0.75, duration: 0.8 }}
           />
-          <label htmlFor="priority-select" className="uppercase text-xs">
+          <label htmlFor="priority-select" className="uppercase text-xs block">
             priority
           </label>
           <select
@@ -114,7 +114,7 @@ export function AddTaskModal({ isOpen, onClose }: AddModalProps) {
             <option value="medium">Medium Priority</option>
             <option value="high">High Priority</option>
           </select>
-          <label htmlFor="date-select" className="uppercase text-xs">
+          <label htmlFor="date-select" className="uppercase text-xs block">
             due date
           </label>
           <motion.input

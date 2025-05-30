@@ -102,7 +102,7 @@ export function EditTaskModal({
           Update task details below
         </p>
         <form>
-          <label htmlFor="description" className="uppercase text-xs">
+          <label htmlFor="description" className="uppercase text-xs block">
             task
           </label>
           <motion.input
@@ -117,7 +117,7 @@ export function EditTaskModal({
             variants={variants}
             transition={{ type: "spring", bounce: 0.75, duration: 0.8 }}
           />
-          <label htmlFor="priority-select" className="uppercase text-xs">
+          <label htmlFor="priority-select" className="uppercase text-xs block">
            priority
           </label>
           <select
@@ -131,7 +131,7 @@ export function EditTaskModal({
             <option value="medium">Medium Priority</option>
             <option value="high">High Priority</option>
           </select>
-          <label htmlFor="date-select" className="uppercase text-xs">
+          <label htmlFor="date-select" className="uppercase text-xs block">
             due date
           </label>
           <motion.input
