@@ -45,7 +45,8 @@ export function ProgressBar() {
         <div className="flex items-center justify-center gap-6 pb-12 px-6 min-w-40">
           <div
             role="progressbar"
-            aria-valuenow={points}
+            aria-label={`Progress toward next badge level. ${points % 100} out of 100 points earned.`}
+            aria-valuenow={points % 100}
             aria-valuemin={0}
             aria-valuemax={100}
             aria-valuetext={`${points} out of ${100} points`}
