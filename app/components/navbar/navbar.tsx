@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AddTaskModal } from "~/components/addTaskModal";
+import { AddTaskModal } from "~/components/addTaskModal/addTaskModal";
 
 type NavbarProps = {
   onOpenRules: () => void;

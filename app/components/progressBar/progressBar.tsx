@@ -24,7 +24,7 @@ export function ProgressBar() {
           <span className="h-3 w-3 rounded-full bg-black"></span>
           <span className="h-3 w-3 rounded-full bg-black"></span>
         </div>
-        <span aria-live="polite" className="text-base font-semibold">
+        <span aria-live="polite" title="points" className="text-base font-semibold">
           Points: {points}
         </span>
       </div>

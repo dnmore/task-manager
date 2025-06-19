@@ -1,8 +1,8 @@
 import { useState } from "react";
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
-import { Navbar } from "~/components/navbar";
-import { RulesModal } from "~/components/rulesModal";
+import { Welcome } from "../../components/welcome/welcome";
+import { Navbar } from "~/components/navbar/navbar";
+import { RulesModal } from "~/components/rulesModal/rulesModal";
 
 export function meta({}: Route.MetaArgs) {
   return [

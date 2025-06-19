@@ -6,6 +6,7 @@
     "build": "react-router build",
     "dev": "react-router dev",
     "start": "npm run dev",
+    "test": "jest",
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
@@ -23,12 +24,21 @@
   "devDependencies": {
     "@netlify/vite-plugin-react-router": "^1.0.1",
     "@react-router/dev": "^7.5.2",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^30.0.0",
     "@types/node": "^20.17.32",
     "@types/react": "^18.3.20",
     "@types/react-dom": "^18.3.6",
     "autoprefixer": "^10.4.21",
+    "babel-jest": "^30.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^30.0.1",
+    "jest-environment-jsdom": "^30.0.1",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
+    "ts-jest": "^29.4.0",
     "typescript": "^5.8.3",
     "vite": "^6.3.3",
     "vite-tsconfig-paths": "^5.1.4"

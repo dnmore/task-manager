@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useTaskStore } from "~/store/useTaskStore";
-import { ProgressBar } from "~/components/progressBar";
-import { PriorityFilter } from "~/components/priorityFilter";
-import { TaskItem } from "~/components/taskItem";
+import { ProgressBar } from "~/components/progressBar/progressBar";
+import { PriorityFilter } from "~/components/priorityFilter/priorityFilter";
+import { TaskItem } from "../taskItem/taskItem";
 
 export function Welcome() {
   const tasks = useTaskStore((state) => state.tasks);

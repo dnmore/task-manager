@@ -92,6 +92,7 @@ export function AddTaskModal({ isOpen, onClose }: AddModalProps) {
             type="text"
             id="description"
             name="description"
+            aria-label="Task description"
             value={taskText}
             onChange={(e) => setTaskText(e.target.value)}
             placeholder="task description"
@@ -107,6 +108,7 @@ export function AddTaskModal({ isOpen, onClose }: AddModalProps) {
             value={priority}
             id="priority-select"
             name="priority-select"
+            aria-label="Task priority"
             onChange={(e) => setPriority(e.target.value)}
             className="w-72 md:w-80 text-sm  border border-[#959692]  py-1.5 pl-1 pr-20 mt-2 mb-4  uppercase focus-within:outline-2 focus-within:outline-customPurple"
           >
@@ -121,6 +123,9 @@ export function AddTaskModal({ isOpen, onClose }: AddModalProps) {
             type="date"
             id="date-select"
             name="date-select"
+            aria-label="Task due date"
+            data-testid="due-date-input"
+            placeholder="task due date"
             value={dueDate}
             onChange={(e) => setDueDate(e.target.value)}
             className="w-72 md:w-80  border  py-1.5 pl-1 pr-20 mt-2 mb-4  placeholder:text-gray-400 placeholder:text-sm focus-within:outline-2 focus-within:outline-customPurple"
