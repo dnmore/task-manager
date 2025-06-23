@@ -1,18 +1,19 @@
 # 🎯 Taskie – Gamified Productivity for Your Tasks
 
-Refactored version of previous [project](https://github.com/dnmore/taskie)
+**Taskie** turns task management into a motivating and playful experience. By combining intuitive organization with gamified features, it encourages consistent productivity while making daily to-dos feel less like a chore and more like a challenge.
 
-- 🚀 React application using React Router and Zustand for state management
-- ⚡️ Improved Performance, Accessibility, SEO
-- 🎉 Cleaner and engaging user experience with a new layout
+Designed with a bold neo-brutalist aesthetic, Taskie helps users stay focused by offering visual rewards, progress tracking, and a clean interface that promotes task completion through positive feedback and engagement.
 
-## Overview
+## 🔄 Background
 
-Taskie transforms task management into an engaging experience, making productivity feel less like work and more like a game. This app aims to help users organize their tasks in a visually engaging way, combining effective task prioritization with gamified elements that motivate users to keep going.
+**Taskie2.0** is a complete refactor of the original **Taskie** app, rebuilt for better performance, user experience, and code maintainability.
 
-Many users struggle with motivation in managing tasks effectively. By blending gamification with a clean, bold design, Taskie aims to make task tracking and completion more rewarding, addressing the need for a task management solution that encourages consistent productivity.
+### ✨ Key Improvements Over Previous Version
 
- [Live Demo](https://taskie-manager.netlify.app/)
+- 🚀  Upgraded from **Create React App** to a modern React setup  with **React Router** and optimized bundling.
+- ⚡️ Significantly improved **Lighthouse scores** across the board — especially in **Accessibility** and **SEO**.
+- 🎉 Fully redesigned UI with **TailwindCSS** for a cleaner and more engaging experience.
+- 🧼 Refactored architecture for scalability and modularity.
 
 ## Features ✨
 
@@ -30,77 +31,54 @@ Many users struggle with motivation in managing tasks effectively. By blending g
 - **Progress Bar**: Shows progress toward the next level.
 - **Gamification**: Unlock levels, badges, and celebrate task completion with animated feedback using Framer Motion.
 
+## 🛠 Tech Stack
 
-## React Router Netlify Template
+- **React** application using **React Router** with **TypeScript** 
+- **TailwindCSS** 
+- **Zustand** 
+- **Motion** 
+- **Lucide React** 
+- **Netlify** 
+- **Jest + React Testing Library**
 
-A modern, production-ready template for building full-stack React applications using React Router,
-deployed to Netlify.
+## 🚀 Deployment
 
-### Features
+- 🔗 [Taskie2.0 Live Site](https://taskie-manager.netlify.app/)
+- 🕹️ [Original Taskie (v1)](https://taskie-task-manager.netlify.app/)
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-- 💻 Configured for deployment to Netlify
+## 📦 Getting Started
 
-### Getting Started
+To run this project locally:
 
-#### Installation
+1. Clone the repository:
 
-Install the dependencies:
+   ```bash
+   git clone https://github.com/dnmore/taskie-2.0.git
+   cd taskie-2.0
+   ```
 
-```bash
-npm install
-```
+2. Install dependencies:
 
-#### Development
+   ```bash
+   npm install
+   ```
 
-Start the development server with HMR:
+3. Start the development server:
 
-```bash
-npm run dev
-```
+   ```bash
+   npm run dev
+   ```
 
-Your application will be available at `http://localhost:5173`.
+4. Your application will be available at `http://localhost:5173`.
 
-### Building for Production
+## 🤝 Contributing
 
-Create a production build:
+Contributions and feedback are welcome!
+Fork the repository and submit a pull request with your ideas, improvements, or bug fixes.
 
-```bash
-npm run build
-```
+📄 License
 
-### Previewing a Production build
-
-To preview a production build locally, use the [Netlify CLI](https://cli.netlify.com):
-
-```bash
-npx netlify-cli serve
-```
-
-```bash
-npm run build
-```
-
-### Deployment
-
-This template is preconfigured for deployment to Netlify.
-
-Follow <https://docs.netlify.com/welcome/add-new-site/> to add this project as a site
-in your Netlify account.
-
-### Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
-### See also
-
-[Guide: how to deploy a React Router 7 site to Netlify](https://developers.netlify.com/guides/how-to-deploy-a-react-router-7-site-to-netlify/)
+This project is licensed under the MIT License.
 
 ---
 
