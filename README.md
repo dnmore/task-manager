@@ -4,16 +4,7 @@
 
 Designed with a bold neo-brutalist aesthetic, Taskie helps users stay focused by offering visual rewards, progress tracking, and a clean interface that promotes task completion through positive feedback and engagement.
 
-## 🔄 Background
-
-**Taskie2.0** is a complete refactor of the original **Taskie** app, rebuilt for better performance, user experience, and code maintainability.
-
-### ✨ Key Improvements Over Previous Version
-
-- 🚀  Upgraded from **Create React App** to a modern React setup  with **React Router** and optimized bundling.
-- ⚡️ Significantly improved **Lighthouse scores** across the board — especially in **Accessibility** and **SEO**.
-- 🎉 Fully redesigned UI with **TailwindCSS** for a cleaner and more engaging experience.
-- 🧼 Refactored architecture for scalability and modularity.
+🔗 [View Live Site](https://taskie-manager.netlify.app/)
 
 ## Features ✨
 
@@ -41,11 +32,6 @@ Designed with a bold neo-brutalist aesthetic, Taskie helps users stay focused by
 - **Netlify** 
 - **Jest + React Testing Library**
 
-## 🚀 Deployment
-
-- 🔗 [Taskie2.0 Live Site](https://taskie-manager.netlify.app/)
-- 🕹️ [Original Taskie (v1)](https://taskie-task-manager.netlify.app/)
-
 ## 📦 Getting Started
 
 To run this project locally:
@@ -53,8 +39,8 @@ To run this project locally:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/dnmore/taskie-2.0.git
-   cd taskie-2.0
+   git clone https://github.com/dnmore/task-manager.git
+   
    ```
 
 2. Install dependencies:
