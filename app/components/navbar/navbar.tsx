@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AddTaskModal } from "~/components/addTaskModal/addTaskModal";
-
+import { FormattedMessage } from "react-intl";
+import { LanguageSwitcher } from "../languageSwitcher/languageSwitcher";
 type NavbarProps = {
   onOpenRules: () => void;
 };
@@ -23,22 +24,21 @@ export function Navbar({ onOpenRules }: NavbarProps) {
       <div className="flex items-center gap-8 py-2">
         <button
           onClick={openTaskModal}
-          
           aria-label="Create new task"
           className="font-sans_grotesque py-2 px-4  uppercase tracking-wider bg-customPurple border-2 border-slate-800  shadow-primary -skew-y-3 hover:scale-[1.02]"
         >
-          Create Task
+          <FormattedMessage id="app.create" />
         </button>
         <AddTaskModal isOpen={isTaskModalOpen} onClose={closeTaskModal} />
 
-       
         <button
           onClick={onOpenRules}
           aria-label="View game rules"
           className="border-b-4 border-b-pink-500 hover:text-pink-500 transition-all ease-in-out"
         >
-          Rules
+          <FormattedMessage id="app.rules" />
         </button>
+        <LanguageSwitcher />
       </div>
     </header>
   );

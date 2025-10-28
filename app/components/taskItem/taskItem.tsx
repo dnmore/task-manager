@@ -4,6 +4,8 @@ import { motion } from "motion/react";
 import type { Task } from "~/types/definition";
 import { EditTaskModal } from "../editTaskModal/editTaskModal";
 import { Gem, Clock } from "lucide-react";
+import clsx from "clsx";
+import { FormattedMessage } from "react-intl";
 
 type TaskItemProps = {
   task: Task;
@@ -37,16 +39,29 @@ export function TaskItem({ task }: TaskItemProps) {
       key={task.id}
       className="flex flex-col  gap-4 my-6 pb-6 px-4 bg-customGray border-2 border-slate-800 shadow-secondary rounded-lg"
     >
-      <span className="max-w-20 text-xs rounded-sm uppercase text-center border-2 border-slate-800 -mt-4 relative bg-slate-800 text-white py-2">
-        {task.priority}
-      </span>
+      <span
+      className={clsx(
+        "w-10 h-7 rounded-sm border-2 border-black -mt-4 relative py-2",
+        {
+          "bg-green-600": task.priority === "low",
+          "bg-yellow-500": task.priority === "medium",
+          "bg-red-600": task.priority === "high",
+        }
+      )}
+    >
+     
+    </span>
       <div className="mb-8">
         <p className="text-xl font-semibold font-sans_grotesque uppercase">
           {task.text}
         </p>
 
         <p className="flex items-center gap-2 mt-2 text-base">
-          <Clock size={24} className="text-slate-800" /> {task.dueDate}
+          <Clock size={24} className="text-slate-800" />
+          
+          
+          
+           {task.dueDate}
         </p>
       </div>
 
@@ -57,7 +72,7 @@ export function TaskItem({ task }: TaskItemProps) {
             aria-label="Open edit task modal"
             className="w-28 h-8 uppercase font-medium tracking-wider bg-customYellow border-2 border-slate-800 shadow-secondary skew-y-3 hover:scale-[1.02]"
           >
-            Edit
+             <FormattedMessage id="app.edit" />
           </button>
           <EditTaskModal
             taskIdToUpdate={taskIdToUpdate}
@@ -69,7 +84,7 @@ export function TaskItem({ task }: TaskItemProps) {
             aria-label="Delete task"
             className="w-28 h-8  uppercase font-medium tracking-wider bg-pink-400  border-2 border-slate-800 shadow-secondary hover:scale-[1.02]"
           >
-            Delete
+            <FormattedMessage id="app.delete" />
           </button>
           {!task.done ? (
             <button
@@ -77,7 +92,7 @@ export function TaskItem({ task }: TaskItemProps) {
               aria-label="Mark task as completed"
               className="w-28 h-8  uppercase font-medium tracking-wider bg-customGray border-2 border-slate-800 shadow-secondary skew-y-3 hover:scale-[1.02]"
             >
-              To Do
+              <FormattedMessage id="app.todo" />
             </button>
           ) : (
             <button
@@ -85,7 +100,7 @@ export function TaskItem({ task }: TaskItemProps) {
               aria-label="Mark task as pending"
               className="w-28 h-8  uppercase font-medium tracking-wider bg-customGreen border-2 border-slate-800 shadow-secondary skew-y-3 hover:scale-[1.02]"
             >
-              Done
+              <FormattedMessage id="app.done" />
             </button>
           )}
         </div>

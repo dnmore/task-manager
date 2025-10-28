@@ -9,6 +9,10 @@ import {
 
 import type { Route } from "./+types/root";
 import stylesheet from "./app.css?url";
+import { IntlProvider } from "react-intl";
+import { DEFAULT_LOCALE, messagesMap } from "./i18n";
+import type { Locale } from "./i18n";
+import { LocaleWrapper } from "./components/localeWrapper/LocaleWrapper";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -43,7 +47,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <LocaleWrapper>
+      <Outlet />
+    </LocaleWrapper>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {

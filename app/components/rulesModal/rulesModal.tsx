@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { X, Minus } from "lucide-react";
+import { FormattedMessage } from "react-intl";
 
 type RulesModalProps = {
   isOpen: boolean;
@@ -38,28 +39,28 @@ export function RulesModal({ isOpen, onClose }: RulesModalProps) {
           id="rules-title"
           className="text-xl font-bold mb-2 font-sans_grotesque"
         >
-          Game Rules
+           <FormattedMessage id="app.rules-title" />
         </h1>
         <p id="rules-description" className="text-sm">
-          Here are the rules for the game:
+          <FormattedMessage id="app.rules-description" />
         </p>
         <ul className="mt-2 list-none flex flex-col text-sm gap-2">
           <li className="flex gap-2">
             <Minus />
-            Complete tasks to earn points.
+          <FormattedMessage id="app.rules-1" />
           </li>
           <li className="flex gap-2">
             <Minus />
-            Reach different levels based on points: Novice, Pro, Guru.
+             <FormattedMessage id="app.rules-2" />
           </li>
 
           <li className="flex gap-2">
             <Minus />
-            Completing higher priority tasks give you more points.
+            <FormattedMessage id="app.rules-3" />
           </li>
           <li className="flex gap-2">
             <Minus />
-            Click the TODO Button to toggle tasks as DONE and get points.
+           <FormattedMessage id="app.rules-4" />
           </li>
         </ul>
       </motion.div>

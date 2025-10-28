@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { v4 as uuidv4 } from "uuid";
 import { useTaskStore } from "~/store/useTaskStore";
 import { useTaskForm } from "~/hooks/useTaskForm";
+import { FormattedMessage } from "react-intl";
 import { X } from "lucide-react";
 type AddModalProps = {
   isOpen: boolean;
@@ -81,13 +82,13 @@ export function AddTaskModal({ isOpen, onClose }: AddModalProps) {
           id="modalTitle"
           className="text-2xl font-sans_grotesque font-semibold"
         >
-          Create Task
+            <FormattedMessage id="app.modalTitle-create" />
         </h1>
         <p id="modalDesc" className="text-sm mb-2">
-          Enter task details below
+          <FormattedMessage id="app.modalDesc-create" />
         </p>
         <form>
-          <label htmlFor="description" className="uppercase text-xs block">Task</label>
+          <label htmlFor="description" className="uppercase text-xs block"> <FormattedMessage id="app.descLabel" /></label>
           <motion.input
             type="text"
             id="description"
@@ -95,14 +96,13 @@ export function AddTaskModal({ isOpen, onClose }: AddModalProps) {
             aria-label="Task description"
             value={taskText}
             onChange={(e) => setTaskText(e.target.value)}
-            placeholder="task description"
             className="w-72 md:w-80 border  rounded-sm py-1.5 pl-1 mt-2 mb-4 placeholder:text-gray-400 placeholder:text-sm focus-within:outline-2 focus-within:outline-customPurple"
             animate={errorText ? "error" : "valid"}
             variants={variants}
             transition={{ type: "spring", bounce: 0.75, duration: 0.8 }}
           />
           <label htmlFor="priority-select" className="uppercase text-xs block">
-            priority
+              <FormattedMessage id="app.priorityLabel" />
           </label>
           <select
             value={priority}
@@ -112,12 +112,12 @@ export function AddTaskModal({ isOpen, onClose }: AddModalProps) {
             onChange={(e) => setPriority(e.target.value)}
             className="w-72 md:w-80 text-sm  border border-[#959692]  py-1.5 pl-1 pr-20 mt-2 mb-4  uppercase focus-within:outline-2 focus-within:outline-customPurple"
           >
-            <option value="low">Low Priority</option>
-            <option value="medium">Medium Priority</option>
-            <option value="high">High Priority</option>
+            <option value="low"><FormattedMessage id="app.optionLow" /></option>
+            <option value="medium"><FormattedMessage id="app.optionMedium" /></option>
+            <option value="high"><FormattedMessage id="app.optionHigh" /></option>
           </select>
           <label htmlFor="date-select" className="uppercase text-xs block">
-            due date
+            <FormattedMessage id="app.dueDateLabel" />
           </label>
           <motion.input
             type="date"
@@ -141,7 +141,7 @@ export function AddTaskModal({ isOpen, onClose }: AddModalProps) {
           type="button"
           className="w-72 py-3 shadow-primary mt-3 uppercase text-sm font-medium tracking-wider border-2 border-slate-800  bg-customPurple skew-y-1 hover:scale-[1.02]"
         >
-          Save
+           <FormattedMessage id="app.save" />
         </button>
       </motion.div>
     </div>

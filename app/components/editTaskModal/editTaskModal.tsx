@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useTaskStore } from "~/store/useTaskStore";
 import { motion } from "motion/react";
 import { useTaskForm } from "~/hooks/useTaskForm";
+import { FormattedMessage } from "react-intl";
 import { X } from "lucide-react";
 
 type EditModalProps = {
@@ -96,14 +97,14 @@ export function EditTaskModal({
           id="modalTitle"
           className="text-2xl font-sans_grotesque font-semibold"
         >
-          Update Task
+           <FormattedMessage id="app.modalTitle-update" />
         </h1>
         <p id="modalDesc" className="text-sm mb-2">
-          Update task details below
+          <FormattedMessage id="app.modalDesc-update" />
         </p>
         <form>
           <label htmlFor="description" className="uppercase text-xs block">
-            task
+          <FormattedMessage id="app.descLabel" />
           </label>
           <motion.input
             type="text"
@@ -118,7 +119,7 @@ export function EditTaskModal({
             transition={{ type: "spring", bounce: 0.75, duration: 0.8 }}
           />
           <label htmlFor="priority-select" className="uppercase text-xs block">
-           priority
+           <FormattedMessage id="app.priorityLabel" />
           </label>
           <select
             value={priority}
@@ -127,12 +128,12 @@ export function EditTaskModal({
             onChange={(e) => setPriority(e.target.value)}
             className="w-72 md:w-80 border border-[#959692] text-sm py-1.5 pl-1 pr-20 mt-2 mb-4  uppercase focus-within:outline-2 focus-within:outline-customPurple"
           >
-            <option value="low">Low Priority</option>
-            <option value="medium">Medium Priority</option>
-            <option value="high">High Priority</option>
+             <option value="low"><FormattedMessage id="app.optionLow" /></option>
+            <option value="medium"><FormattedMessage id="app.optionMedium" /></option>
+            <option value="high"><FormattedMessage id="app.optionHigh" /></option>
           </select>
           <label htmlFor="date-select" className="uppercase text-xs block">
-            due date
+          <FormattedMessage id="app.dueDateLabel" />
           </label>
           <motion.input
             type="date"
@@ -153,7 +154,7 @@ export function EditTaskModal({
           type="button"
           className="w-72 py-3 shadow-primary mt-3 uppercase text-sm font-medium tracking-wider border-2 border-slate-800  bg-customYellow skew-y-1 hover:scale-[1.02]"
         >
-          Update
+           <FormattedMessage id="app.update" />
         </button>
       </motion.div>
     </div>
