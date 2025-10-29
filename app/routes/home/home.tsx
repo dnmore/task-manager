@@ -17,13 +17,13 @@ export default function Home() {
   const openRulesModal = () => setIsRulesModalOpen(true);
   const closeRulesModal = () => setIsRulesModalOpen(false);
   return (
-    <div>
+    <main>
       <div className="bg-customGreen py-4">
         <Navbar onOpenRules={openRulesModal} />
       </div>
       
       <RulesModal isOpen={isRulesModalOpen} onClose={closeRulesModal} />
       <Welcome />
-    </div>
+    </main>
   );
 }

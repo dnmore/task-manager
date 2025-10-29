@@ -23,7 +23,7 @@ export function Welcome() {
       </div>
 
       <PriorityFilter value={filterPriority} onSelect={selectPriority} />
-      <div className="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-6 gap-4">
+      <div className="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-6 pb-4 gap-4">
         {selectedTasks.map((task) => (
           <TaskItem task={task} key={task.id} />
         ))}

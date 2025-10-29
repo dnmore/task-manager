@@ -25,7 +25,7 @@ export function Navbar({ onOpenRules }: NavbarProps) {
         <button
           onClick={openTaskModal}
           aria-label="Create new task"
-          className="font-sans_grotesque py-2 px-4  uppercase tracking-wider bg-customPurple border-2 border-slate-800  shadow-primary -skew-y-3 hover:scale-[1.02]"
+          className="font-sans_grotesque py-2 px-4 text-sm md:text-base  uppercase tracking-wider bg-customPurple border-2 border-slate-800  shadow-primary -skew-y-3 hover:scale-[1.02]"
         >
           <FormattedMessage id="app.create" />
         </button>
