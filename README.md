@@ -4,7 +4,7 @@
 
 Designed with a bold neo-brutalist aesthetic, Taskie helps users stay focused by offering visual rewards, progress tracking, and a clean interface that promotes task completion through positive feedback and engagement.
 
-🔗 [View Live Site](https://taskie-manager.netlify.app/)
+🔗 [View Demo](https://taskie-manager.netlify.app/)
 
 ## Features ✨
 
@@ -21,6 +21,8 @@ Designed with a bold neo-brutalist aesthetic, Taskie helps users stay focused by
 - **Modals**: Modals are used for creating/editing tasks and displaying game rules.
 - **Progress Bar**: Shows progress toward the next level.
 - **Gamification**: Unlock levels, badges, and celebrate task completion with animated feedback using Framer Motion.
+- **Internationalization (i18n)** - Supported languages: English (en), Italian (it), and French (fr); language switcher for seamless in-app language selection.
+
 
 ## 🛠 Tech Stack
 
@@ -31,6 +33,7 @@ Designed with a bold neo-brutalist aesthetic, Taskie helps users stay focused by
 - **Lucide React** 
 - **Netlify** 
 - **Jest + React Testing Library**
+- **React Intl** for internationalization (i18n)
 
 ## 📦 Getting Started
 
