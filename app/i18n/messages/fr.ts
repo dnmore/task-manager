@@ -26,6 +26,7 @@ export const fr = {
    'app.todo': 'À faire',
   'app.done': 'Terminée',
    'app.update': 'Modifier',
+   'app.emptyState': 'Aucune tâche',
   
 
 

@@ -26,6 +26,7 @@ export const it = {
   'app.todo': 'Da Fare',
   'app.done': 'Fatto',
   'app.update': 'Aggiorna',
+  'app.emptyState': 'Nessuna attività',
   
 
 
