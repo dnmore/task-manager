@@ -21,7 +21,7 @@ Designed with a bold neo-brutalist aesthetic, Taskie helps users stay focused by
 - **Modals**: Modals are used for creating/editing tasks and displaying game rules.
 - **Progress Bar**: Shows progress toward the next level.
 - **Gamification**: Unlock levels, badges, and celebrate task completion with animated feedback using Framer Motion.
-- **Internationalization (i18n)** - Supported languages: English (en), Italian (it), and French (fr); language switcher for seamless in-app language selection.
+- **Internationalization (i18n)** - Supported languages: English (en), Italian (it), French (fr) and German (de); language switcher for seamless in-app language selection.
 
 
 ## 🛠 Tech Stack
