@@ -1,41 +1,110 @@
-# 🎯 Taskie – Gamified Productivity for Your Tasks
+# Taskie – Gamified Productivity for Your Tasks
 
-**Taskie** turns task management into a motivating and playful experience. By combining intuitive organization with gamified features, it encourages consistent productivity while making daily to-dos feel less like a chore and more like a challenge.
+![React](https://img.shields.io/badge/React-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-blue)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC)
+![Zustand](https://img.shields.io/badge/Zustand-black)
+![Framer Motion](https://img.shields.io/badge/Framer--Motion-animations-purple)
+![React Router](https://img.shields.io/badge/React--Router-routing-red)
+![Netlify](https://img.shields.io/badge/Deployed%20on-Netlify-00C7B7)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-Designed with a bold neo-brutalist aesthetic, Taskie helps users stay focused by offering visual rewards, progress tracking, and a clean interface that promotes task completion through positive feedback and engagement.
+**Taskie** turns task management into a motivating and playful experience.  
+By combining intuitive organization with **gamified mechanics**, it encourages consistent productivity while making daily to-dos feel less like chores and more like achievements.
 
-🔗 [View Demo](https://taskie-manager.netlify.app/)
+Designed with a **bold neo-brutalist aesthetic**, Taskie provides visual rewards, progress tracking, and interactive feedback that helps users stay motivated and focused.
 
-## Features ✨
+---
 
-- **Task Creation & Editing**: Users can create, edit, and delete tasks with assigned priorities (low, medium, high) and due dates.
-- **Points System**: Earn points based on task priority when completing tasks:
-  Low Priority: +10 points
-  Medium Priority: +20 points
-  High Priority: +30 points
-- **Levels**: As users accumulate points, they unlock new levels:
-  Taskie Novice: 0 – 99 points
-  Taskie Pro: 100 – 199 points
-  Taskie Guru: 200+ points
-- **Filters**: Filter tasks by priority (Low, Medium, High).
-- **Modals**: Modals are used for creating/editing tasks and displaying game rules.
-- **Progress Bar**: Shows progress toward the next level.
-- **Gamification**: Unlock levels, badges, and celebrate task completion with animated feedback using Framer Motion.
-- **Internationalization (i18n)** - Supported languages: English (en), Italian (it), French (fr) and German (de); language switcher for seamless in-app language selection.
+## Demo
+
+🌐 **Live Demo:**  
+https://taskie-manager.netlify.app/
+
+---
+
+## Table of Contents
+
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Running Locally](#running-locally)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+# Features
+
+### Task Management
+- Create, edit, and delete tasks
+- Assign **priorities** (Low, Medium, High)
+- Set **due dates**
+
+### Gamified Progression
+Users earn points when completing tasks:
+
+| Priority | Points |
+|--------|--------|
+| Low | +10 |
+| Medium | +20 |
+| High | +30 |
+
+### Level System
+
+| Level | Points |
+|------|------|
+| Taskie Novice | 0 – 99 |
+| Taskie Pro | 100 – 199 |
+| Taskie Guru | 200+ |
+
+### Productivity Tools
+
+- Filter tasks by priority
+- Progress bar toward the next level
+- Modals for task creation and rules
+- Animated feedback using **Framer Motion**
+
+### Internationalization (i18n)
+
+Supported languages:
+
+- English 🇬🇧
+- Italian 🇮🇹
+- French 🇫🇷
+- German 🇩🇪
+
+Includes an **in-app language switcher** for seamless localization.
+
+---
+
+# Tech Stack
+
+### Frontend
+
+- **React** + **TypeScript**
+- **React Router**
+- **TailwindCSS**
+- **Zustand** (state management)
+- **Framer Motion**
+- **Lucide React**
+
+### Testing
+
+- **Jest**
+- **React Testing Library**
+
+### Deployment
+
+- **Netlify**
+
+### Internationalization
+
+- **React Intl**
+
+---
 
 
-## 🛠 Tech Stack
-
-- **React** application using **React Router** with **TypeScript** 
-- **TailwindCSS** 
-- **Zustand** 
-- **Motion** 
-- **Lucide React** 
-- **Netlify** 
-- **Jest + React Testing Library**
-- **React Intl** for internationalization (i18n)
-
-## 📦 Getting Started
+# Running Locally
 
 To run this project locally:
 
@@ -60,15 +129,17 @@ To run this project locally:
 
 4. Your application will be available at `http://localhost:5173`.
 
-## 🤝 Contributing
+# Contributing
 
-Contributions and feedback are welcome!
-Fork the repository and submit a pull request with your ideas, improvements, or bug fixes.
+Contributions and feedback are welcome.
 
-📄 License
+1. Fork the repository
+2. Create a new branch
+3. Submit a pull request with your improvements
+
+# License
 
 This project is licensed under the MIT License.
 
----
 
-Built with ❤️ using React Router.
+
