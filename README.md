@@ -1,7 +1,7 @@
 # Taskie – Gamified Productivity for Your Tasks
 
 ![React](https://img.shields.io/badge/React-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-orange)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC)
 ![Zustand](https://img.shields.io/badge/Zustand-black)
 ![Framer Motion](https://img.shields.io/badge/Framer--Motion-animations-purple)
@@ -16,18 +16,12 @@ Designed with a **bold neo-brutalist aesthetic**, Taskie provides visual rewards
 
 ---
 
-## Demo
-
-🌐 **Live Demo:**  
-https://taskie-manager.netlify.app/
-
----
-
 ## Table of Contents
 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Running Locally](#running-locally)
+- [Demo](#demo)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -128,6 +122,10 @@ To run this project locally:
    ```
 
 4. Your application will be available at `http://localhost:5173`.
+
+# Demo
+
+[View Demo](https://taskie-manager.netlify.app/)
 
 # Contributing
 
