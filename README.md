@@ -14,6 +14,10 @@ By combining intuitive organization with **gamified mechanics**, it encourages c
 
 Designed with a **bold neo-brutalist aesthetic**, Taskie provides visual rewards, progress tracking, and interactive feedback that helps users stay motivated and focused.
 
+## Demo
+
+[Live Demo](https://expenz-tracker-dashboard.vercel.app/)
+
 ---
 
 ## Table of Contents
@@ -21,7 +25,7 @@ Designed with a **bold neo-brutalist aesthetic**, Taskie provides visual rewards
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Running Locally](#running-locally)
-- [Demo](#demo)
+
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -137,7 +141,7 @@ Contributions and feedback are welcome.
 
 # License
 
-This project is licensed under the MIT License.
+MIT License.
 
 
 
