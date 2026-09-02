@@ -16,7 +16,7 @@ Designed with a **bold neo-brutalist aesthetic**, Taskie provides visual rewards
 
 ## Demo
 
-[Live Demo](https://expenz-tracker-dashboard.vercel.app/)
+[Live Demo](taskie-manager.netlify.app/)
 
 ---
 
