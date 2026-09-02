@@ -16,7 +16,7 @@ Designed with a **bold neo-brutalist aesthetic**, Taskie provides visual rewards
 
 ## Demo
 
-[Live Demo](taskie-manager.netlify.app/)
+[Live Demo](https://taskie-manager.netlify.app/)
 
 ---
 
